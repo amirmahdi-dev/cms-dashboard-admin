@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+/* =========================
+   THEME (COLORS & SHADOWS)
+========================= */
+@theme {
+  /* ---------- Fonts ---------- */
+  --font-dana: "Dana";
+  --font-dana-medium: "Dana Medium";
+  --font-dana-demibold: "Dana DemiBold";
+  --font-morabba-light: "Morabba Light";
+  --font-morabba-medium: "Morabba Medium";
+  --font-morabba-bold: "Morabba Bold";
+
+  /* ---------- Base Colors ---------- */
+  --color-black-900: #0B1020;
+  --color-gray-custom: #8A9AB8;
+  --color-blue-custom: #3B82F6;
+
+  /* ---------- Glass Status Colors ---------- */
+  --color-success: #10B981;
+  --color-success-light: rgba(16, 185, 129, 0.12);
+
+  --color-error: #F43F5E;
+  --color-error-light: rgba(244, 63, 94, 0.12);
+
+  --color-warning: #FBBF24;
+  --color-warning-light: rgba(251, 191, 36, 0.14);
+
+  /* ---------- Shadows ---------- */
+  --shadow-base: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-primary: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* Success Button */
+  --shadow-btn: 0 1px 15px rgba(16, 185, 129, 0.3);
+  --shadow-btn-hover: 0 16px 45px rgba(16, 185, 129, 0.45);
+  --shadow-btn-dark: 0 1px 15px rgba(16, 185, 129, 0.55);
+
+  /* Danger Button */
+  --shadow-danger-btn: 0 1px 15px rgba(244, 63, 94, 0.3);
+  --shadow-danger-btn-hover: 0 16px 45px rgba(244, 63, 94, 0.45);
+  --shadow-danger-btn-dark: 0 1px 15px rgba(244, 63, 94, 0.55);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================
+   GLASS UTILITIES
+========================= */
+@utility liquid-glass {
+  @apply backdrop-blur-xl backdrop-saturate-150 border transition-all duration-300;
+  @apply bg-white/40 border-white/40;
+
+  &:where(.dark, .dark *) {
+    @apply bg-slate-900/40 border-white/10 text-white/70;
+  }
+}
+
+@utility liquid-glass-hover {
+  @apply hover:-translate-y-1 hover:shadow-xl transition-all;
+
+}
+
+@utility glass-icon {
+  @apply p-3 rounded-2xl border transition-all;
+  @apply bg-white/50 border-white/20 text-indigo-600 shadow-sm;
+
+  &:where(.dark, .dark *) {
+    @apply bg-white/5 border-white/10 text-cyan-400;
+  }
+}
+
+@utility liquid-button {
+  @apply relative overflow-hidden font-medium py-2.5 px-6 rounded-2xl backdrop-blur-2xl backdrop-saturate-150 border transition-all duration-300 active:scale-95;
+
+  /* blue tint but see-through */
+  @apply bg-linear-to-tr from-blue-500/20 to-cyan-500/20 text-blue-950 border-blue-400/30;
+
+  /* soft glass depth */
+  box-shadow:
+    0 8px 30px rgba(59, 130, 246, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  /* glass light sweep */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.55),
+        transparent 75%);
+    opacity: 0.4;
+    transform: translateX(-120%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    transform: translateX(120%);
+  }
+
+  &:hover {
+    @apply bg-blue-300/50 border-blue-400/45;
+  }
+
+  &:where(.dark, .dark *) {
+    @apply bg-blue-800 text-blue-100 border-blue-950/25;
+
+    box-shadow:
+      0 8px 30px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+@utility btn {
+  @apply hover:scale-105 active:scale-95 p-2.5 rounded-md cursor-pointer transition-all;
+}
+
+@utility btn-edit {
+  @apply text-warning bg-warning-light shadow-primary shadow-warning-light;
+  @apply hover:bg-warning/40 hover:shadow-btn-hover hover:ring-1 hover:ring-warning;
+  @apply disabled:disable-btn disabled:hover:bg-warning-light;
+}
+
+@utility btn-delete {
+  @apply text-error bg-error-light shadow-primary shadow-error-light;
+  @apply hover:bg-error/40 hover:shadow-btn-hover hover:ring-1 hover:ring-error;
+  @apply disabled:disable-btn;
+}
+
+@utility submit-btn {
+  @apply cursor-pointer w-full px-6 py-3 rounded-xl font-dana-medium text-emerald-900 bg-emerald-300/20 backdrop-blur-xl border border-emerald-200/30 shadow-btn transition-all duration-300;
+  @apply hover:shadow-btn-hover hover:ring-2 hover:ring-emerald-400/40 active:scale-95;
+  @apply disabled:hover:bg-emerald-300/20 disabled:disable-btn;
+
+  &:where(.dark, .dark *) {
+    @apply text-emerald-100 bg-emerald-400/20 border-emerald-400/25 shadow-btn-dark hover:bg-emerald-400/30;
+    @apply disabled:hover:bg-emerald-400/20;
+  }
+
+}
+
+@utility danger-btn {
+  @apply cursor-pointer size-10 rounded-xl font-dana-medium text-rose-900 backdrop-blur-xl ring ring-rose-300/30 shadow-danger-btn transition-all duration-300 hover:bg-rose-400/30 hover:shadow-danger-btn-hover hover:ring-2 hover:ring-rose-400/40 active:scale-95;
+
+  &:where(.dark, .dark *) {
+    @apply text-rose-300 ring-rose-400/25 shadow-danger-btn-dark hover:bg-rose-500/30;
+  }
+}
+
+@utility disable-btn {
+  @apply shadow-none cursor-no-drop opacity-40;
+  @apply active:scale-100 hover:ring-0 hover:shadow-none hover:scale-100;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+@utility nav-item {
+  @apply flex items-center gap-3 py-3 rounded-2xl transition-all cursor-pointer duration-300 text-slate-600;
+  @apply hover:text-slate-900 hover:bg-white/20 hover:px-4;
+
+  &:where(.dark, .dark *) {
+    @apply text-white/60 hover:text-white hover:bg-white/10;
+  }
+}
+
+@utility nav-item-active {
+  @apply ring ring-blue-500/30 px-4 text-blue-600 bg-linear-to-tr duration-300 transition-all from-blue-500/20 to-cyan-500/20;
+
+  &:where(.dark, .dark *) {
+    @apply text-cyan-400;
+  }
+}
+
+/* =========================
+   BASE
+========================= */
+@layer base {
+
+  /**400*/
+  @font-face {
+    font-family: "Dana";
+    src: local("Dana"), url("../fonts/Dana/woff2/DanaFaNum-Regular.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  /* 500 */
+  @font-face {
+    font-family: "Dana Medium";
+    src: local("DanaMedium"), url("../fonts/Dana/woff2/DanaFaNum-Medium.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  /* 600 */
+  @font-face {
+    font-family: "Dana DemiBold";
+    src: local("DanaDemiBold"), url("../fonts/Dana/woff2/DanaFaNum-DemiBold.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Morabba Light";
+    src: local("MorabbaLight"), url("../fonts/Morabba/woff2/Morabba-Light.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Morabba Medium";
+    src: local("MorabbaMedium"), url("../fonts/Morabba/woff2/Morabba-Medium.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Morabba Bold";
+    src: local("MorabbaBold"), url("../fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  body {
+    @apply font-dana min-h-screen transition-colors duration-500;
+    background: linear-gradient(180deg, #e2e8f0, #cbd5e1);
+  }
+
+  .dark body {
+    background: radial-gradient(circle at top, #0f172a, #020617);
+  }
+}
+
+/* =========================
+   HELPERS
+========================= */
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility overlay--show {
+  @apply fixed inset-0 z-100 bg-slate-900/40 backdrop-blur-sm opacity-100 transition-all;
+}
+
+@utility glass-divider {
+  @apply h-px w-full my-4 bg-white;
+}
+
+@utility input {
+  @apply w-full p-2 rounded-lg liquid-glass;
+  @apply border border-white/30 outline-none focus:scale-101 focus:border-blue-400/40 focus:shadow-primary focus:shadow-blue-400/20;
+
+}
+
+@utility valid {
+  &:valid {
+    @apply border-success shadow-success/20;
+  }
+}
+
+@utility invalid {
+  &:invalid {
+    @apply border-error shadow-error/20;
+  }
+}
+
+@utility custom-scroll {
+  &::-webkit-scrollbar {
+    box-sizing: border-box;
+    height: 10px;
+    width: 12px;
+    overflow: hidden;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: radial-gradient(circle, #228688 0%, #496529 100%);
+    @apply dark:bg-[#267F62];
+    border: 2px solid transparent;
+    background-clip: content-box;
+    /* border-radius: 4px; */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: radial-gradient(circle, #A3A3A3 0%, #858585 100%);
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #282726;
+    /* border-radius: 0px; */
+    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+  }
+}
+
+@utility active {
+  @apply text-success bg-success-light shadow-primary shadow-success-light py-1 px-3 rounded-lg text-center;
+}
+
+@utility not-active {
+  @apply text-error bg-error-light shadow-primary shadow-error-light py-1 px-3 rounded-lg text-center;
+}
+
+@utility pending {
+  @apply text-warning bg-warning-light shadow-primary shadow-warning-light py-1 px-3 rounded-lg text-center;
+}
+
+@utility page {
+  @apply size-7 flex-center rounded-md border border-cyan-500 cursor-pointer
+}
+
+@utility page-active {
+  @apply bg-cyan-500 text-white shadow-primary shadow-cyan-500/50 border-0 cursor-pointer
+}
+
+@utility toast-box {
+  @apply text-black dark:text-white liquid-glass z-300 overflow-hidden fixed w-74 rounded-sm border-0;
+}
+
+@utility toast {
+  @apply flex gap-x-2.5 py-4 px-3;
+}
+
+@utility toast-header {
+  @aplly font-dana-demibold text-xl;
+}

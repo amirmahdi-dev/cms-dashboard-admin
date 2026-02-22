@@ -1,0 +1,65 @@
+<body>
+  <div class="liquid-sidebar liquid-glass h-full w-72 rounded-2xl">
+    <div class="items-center gap-x-3 px-2 pt-2">
+      <div class="flex-center flex-col w-full">
+        <h3 class="hidden lg:flex glass-text-primary text-xl font-DanaDemibold">
+          داشبورد مدیریت
+        </h3>
+        <span class="hidden lg:flex text-base glass-text-secondary">خوش آمدید 👋</span>
+        <div class="flex gap-x-1.5 text-black dark:text-white mt-3">
+          <span>امروز:</span>
+          <span class="date"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden lg:block glass-divider"></div>
+
+    <!-- nav item -->
+    <nav id="nav-items" class="flex flex-col gap-y-2 mx-4 pt-3.5 lg:mt-0">
+      <div data-link="dashboard" class="nav-item nav-item-active group z-10">
+        <svg class="size-6">
+          <use href="#dashbord"></use>
+        </svg>
+        <span class="font-dana-medium">داشبورد</span>
+      </div>
+
+      <div data-link="products" class="nav-item group">
+        <svg class="size-6 transition-transform group-hover:scale-110">
+          <use href="#product"></use>
+        </svg>
+        <span>محصولات</span>
+      </div>
+
+      <div data-link="users" class="nav-item group">
+        <svg class="size-6 transition-transform group-hover:scale-110">
+          <use href="#user"></use>
+        </svg>
+        <span>کاربرها</span>
+      </div>
+
+      <div data-link="orders" class="nav-item group">
+        <svg class="size-6 transition-transform group-hover:scale-110">
+          <use href="#orders"></use>
+        </svg>
+        <span>سفارش ها</span>
+      </div>
+
+      <div data-link="coupons" class="nav-item group">
+        <svg class="size-6 transition-transform group-hover:scale-110">
+          <use href="#discount-code"></use>
+        </svg>
+        <span>کد تخفیف</span>
+      </div>
+    </nav>
+
+    <div class="glass-divider"></div>
+
+    <!-- switch them btn -->
+    <div id="theme-btn" class="inline-flex gap-x-2.5 mx-4 *:cursor-pointer">
+      <svg id="theme-icon" class="size-6">
+      </svg>
+      <span id="theme-title"></span>
+    </div>
+  </div>
+</body>

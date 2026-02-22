@@ -1,0 +1,39 @@
+<!-- header -->
+<div class="invoice-header">
+  <div>
+    <img src="/public/img/images.png" class="invoice-logo" />
+  </div>
+
+  <div class="invoice-info">
+    <h2>فاکتور فروش</h2>
+    <p>شماره فاکتور: <span id="invoice-number"></span></p>
+    <p>تاریخ: <span id="order-date"></span></p>
+  </div>
+</div>
+
+<!-- customer -->
+<div class="invoice-customer">
+  <p>نام مشتری: <span id="customer-name"></span></p>
+</div>
+
+<!-- table -->
+<table class="invoice-table">
+  <thead>
+    <tr>
+      <th>محصول</th>
+      <th>تعداد</th>
+      <th>قیمت واحد</th>
+      <th>جمع</th>
+    </tr>
+  </thead>
+
+  <tbody id="invoice-items"></tbody>
+</table>
+
+<!-- totals -->
+<div class="invoice-totals">
+  <p>جمع کل: <span id="subtotal"></span></p>
+  <p>تخفیف: <span id="discount"></span></p>
+  <p>مالیات: <span id="tax"></span></p>
+  <p class="final">مبلغ نهایی: <span id="total-price"></span></p>
+</div>

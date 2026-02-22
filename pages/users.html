@@ -1,0 +1,120 @@
+<body>
+  <!-- nav bar -->
+  <section class="flex justify-between items-center">
+    <div>
+      <h1
+        class="font-morabba-bold text-2xl md:text-3xl text-gray-800 dark:text-white/90"
+      >
+        مدیریت کاربران
+      </h1>
+      <p class="text-xs md:text-sm text-gray-500 dark:text-white/80 mt-1">
+        لیست کاربر های ثبت‌شده در سیستم
+      </p>
+    </div>
+
+    <div
+      class="create-user group cursor-pointer flex items-center gap-2 liquid-button px-2.5 sm:px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+    >
+      <span
+        class="bg-white/20 p-1.5 rounded-lg group-hover:rotate-90 transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-3 sm:size-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 4v16m8-8H4"
+          />
+        </svg>
+      </span>
+      <span class="text-[10px] sm:text-base">افزودن کاربر جدید</span>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <div class="liquid-glass rounded-lg pt-4">
+      <!-- search & filter -->
+      <div
+        class="flex flex-col sm:flex-row sm:justify-between mb-4 px-4 gap-y-4"
+      >
+        <!-- search -->
+        <div class="relative">
+          <input
+            type="search"
+            placeholder="جستوجو..."
+            id="search-box"
+            class="input pr-10 py-3 sm:py-4 rounded-lg bg-transparent liquid-glass w-full md:w-81.25"
+          />
+          <svg class="absolute top-0 bottom-0 my-auto mr-4 size-5">
+            <use href="#search"></use>
+          </svg>
+        </div>
+        <!-- filter -->
+        <div class="rounded-lg w-fit liquid-glass bg-transparent">
+          <select
+            class="py-3 md:py-4 mx-4 h-full focus:outline-0 cursor-pointer *:text-black-900"
+            id="user-filter"
+            dir="rtl"
+          >
+            <option class="dark:bg-black" selected value="">تمامی کاربران</option>
+            <option class="dark:bg-black" value="1">فعال بودن حساب</option>
+            <option class="dark:bg-black" value="-1">غیرفعال بودن حساب</option>
+            <option class="dark:bg-black" value="date">تاریخ عضویت</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- table -->
+      <div
+        class="overflow-x-auto text-right liquid-glass border-0 custom-scroll"
+      >
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-[#6B7280] dark:text-white *:p-4 border-b border-[#E5E7EB] dark:border-gray-600"
+            >
+              <th class="">اسم</th>
+              <th class="">ایمیل</th>
+              <th class="">شماره تلفن</th>
+              <th class="">نقش</th>
+              <th class="">رمز عبور</th>
+              <th class="">تاریخ عضویت</th>
+              <th class="">وضعیت حساب</th>
+              <th class="">عملیات</th>
+            </tr>
+          </thead>
+          <tbody class="user-wrapper overflow-x-auto">
+            <!-- data loaded from js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- pagination -->
+      <div class="pagination flex-center gap-x-1.5 mt-2.5 pb-4">
+        <span class="pre-btn page size-7 flex-center rounded-md border border-cyan-500 cursor-pointer"
+        >
+          <svg class="size-4">
+            <use href="#chevron-right"></use>
+          </svg>
+        </span>
+        <!-- pages number -->
+        <div class="pages flex-center gap-x-1.5">
+          <!-- <span
+            class="page"
+            >1</span> -->
+        </div>
+        <span class="next-btn page size-7 flex-center rounded-md border border-cyan-500 cursor-pointer">
+          <svg class="size-4">
+            <use href="#chevron-left"></use>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </section>
+</body>

@@ -1,0 +1,258 @@
+<body>
+  <!-- Wrapper Cart -->
+  <section
+    class="grid justify-items-center gap-y-2 gap-x-2 lg:gap-x-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4"
+  >
+    <!-- user Cart -->
+    <div
+      class="liquid-glass liquid-glass-hover p-8 w-full mx-auto rounded-2xl group-hover:shadow-primary overflow-hidden group hover:shadow-success-light"
+    >
+      <!-- cover -->
+      <div
+        class="absolute -left-[80%] top-0 h-full group-hover:left-0 transition-all duration-300 bg-success md:bg-success/50 group-hover:bg-success group-hover:border-success group-hover:shadow-base group-hover:shadow-success/50 w-full"
+      ></div>
+      <div class="flex items-center gap-4">
+        <!-- Icon Cart -->
+        <div
+          class="p-2 rounded-md border group-hover:bg-amber-50 border-success-light glass-icon shadow-base shadow-success z-10"
+        >
+          <svg class="size-5 text-success">
+            <use href="#ph-user-square-light"></use>
+          </svg>
+        </div>
+        <!-- Info Cart -->
+        <div class="flex flex-col z-10">
+          <span id="total-users" class="text-black-900 dark:text-white">0</span>
+          <span class="text-gray">کاربر</span>
+        </div>
+      </div>
+    </div>
+    <!-- product Cart -->
+    <div
+      class="liquid-glass liquid-glass-hover p-8 w-full mx-auto rounded-2xl group-hover:shadow-primary overflow-hidden group hover:shadow-warning-light"
+    >
+      <!-- cover -->
+      <div
+        class="absolute -left-[80%] top-0 h-full group-hover:left-0 transition-all duration-300 bg-warning md:bg-warning/50 group-hover:bg-warning group-hover:border-warning w-full"
+      ></div>
+
+      <div class="flex items-center gap-4">
+        <!-- Icon Cart -->
+        <div
+          class="p-2 rounded-md border border-warning-light group-hover:bg-amber-50 glass-icon shadow-base shadow-warning z-10"
+        >
+          <svg class="size-5 text-warning">
+            <use href="#icon-park-outline-ad-product"></use>
+          </svg>
+        </div>
+        <!-- Info Cart -->
+        <div class="flex flex-col z-10">
+          <span id="total-products" class="text-black-900 dark:text-white">0</span>
+          <span class="text-gray">محصولات</span>
+        </div>
+      </div>
+    </div>
+    <!-- order Cart -->
+    <div
+      class="liquid-glass liquid-glass-hover p-8 w-full mx-auto rounded-2xl group-hover:shadow-primary overflow-hidden group hover:shadow-error-light"
+    >
+      <div
+        class="absolute -left-[80%] top-0 h-full group-hover:left-0 transition-all duration-300 bg-error md:bg-error/50 group-hover:bg-error group-hover:border-error w-full"
+      ></div>
+      <div class="flex items-center gap-4">
+        <!-- Icon Cart -->
+        <div
+          class="p-2 rounded-md border border-error-light group-hover:bg-amber-50 glass-icon shadow-base shadow-error z-10"
+        >
+          <svg class="size-5 text-error">
+            <use href="#material-symbols-light-orders-outline-rounded"></use>
+          </svg>
+        </div>
+        <!-- Info Cart -->
+        <div class="flex flex-col z-10">
+          <span id="total-orders" class="text-black-900 dark:text-white">0</span>
+          <span class="text-gray">سفارشات</span>
+        </div>
+      </div>
+    </div>
+    <!-- coupon Cart -->
+    <div
+      class="liquid-glass liquid-glass-hover p-8 w-full mx-auto rounded-2xl group-hover:shadow-primary overflow-hidden group hover:shadow-blue-custom/12"
+    >
+      <div
+        class="absolute -left-[80%] top-0 h-full group-hover:left-0 transition-all duration-300 bg-blue-custom md:bg-blue-custom/50 group-hover:bg-blue-custom group-hover:border-blue-custom w-full"
+      ></div>
+      <div class="flex items-center gap-4">
+        <!-- Icon Cart -->
+        <div
+          class="p-2 rounded-md border border-error-light glass-icon shadow-base shadow-blue-custom z-10 group-hover:bg-amber-50"
+        >
+          <svg class="size-5 text-blue-custom">
+            <use href="#discount-code"></use>
+          </svg>
+        </div>
+        <!-- Info Cart -->
+        <div class="flex flex-col z-10">
+          <span id="total-coupons" class="text-black-900 dark:text-white">0</span>
+          <span class="text-gray">کد های تخفیف</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- main -->
+  <section
+    class="grid justify-items-center gap-y-2 gap-x-3 grid-cols-6 lg:grid-cols-12 mt-4"
+  >
+    <!-- users -->
+    <div
+      class="flex flex-col col-span-full pb-3.75 liquid-glass rounded-2xl w-full dark:text-white z-10"
+    >
+      <div class="flex justify-between p-6 text-black dark:text-blue-100 text-sm sm:text-lg">
+        <h1 class="font-morabba-bold">کاربر های اخیر</h1>
+        <div id="show-all-users" data-link="users" class="flex-center gap-x-1 font-morabba-light cursor-pointer">
+          <span>مشاهده همه</span>
+          <svg class="size-3.5 sm:size-5">
+            <use href="#chevron-left-rounded"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="overflow-x-auto text-right liquid-glass border-0 custom-scroll">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-[#6B7280] dark:text-white *:p-4 border-b border-[#E5E7EB] dark:border-gray-600"
+            >
+              <th class="">اسم</th>
+              <th class="">ایمیل</th>
+              <th class="">شماره تلفن</th>
+              <th class="">رمز عبور</th>
+              <th class="">تاریخ عضویت</th>
+              <th class="">نقش</th>
+              <th class="">وضعیت حساب</th>
+            </tr>
+          </thead>
+          <tbody id="user-recent">
+          <!-- data loaded from js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- coupons -->
+    <div
+      class="flex flex-col col-span-full lg:col-span-6 pb-3.75 liquid-glass rounded-2xl w-full dark:text-white"
+    >
+      <!-- header -->
+      <div class="flex justify-between p-6 text-black dark:text-blue-100 text-sm sm:text-lg">
+        <h1 class="font-morabba-bold">کد تخفیف های اخیر</h1>
+        <div id="show-all-coupons" data-link="coupons" class="flex-center gap-x-1 font-morabba-light cursor-pointer">
+          <span>مشاهده همه</span>
+          <svg class="size-3.5 sm:size-5">
+            <use href="#chevron-left-rounded"></use>
+          </svg>
+        </div>
+      </div>
+
+      <!-- table -->
+      <div class="overflow-x-auto text-right liquid-glass border-0 custom-scroll">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-[#6B7280] dark:text-blue-50 *:p-4 border-b border-[#E5E7EB] dark:border-gray-600"
+            >
+              <th class="">کد تخفیف</th>
+              <th class="">توضیحات</th>
+              <th class="">تعداد کد تخفیف</th>
+              <th class="">تعداد استفاده شده</th>
+              <th class="">تاریخ شروع</th>
+              <th class="">تاریخ اتمام</th>
+              <th class="">دسته بندی ها</th>
+              <th class="">وضعیت کد تخفیف</th>
+            </tr>
+          </thead>
+          <tbody id="coupons-recent">
+            <!-- data loaded from js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- orders -->
+    <div
+      class="flex flex-col col-span-full lg:col-span-6 pb-3.75 liquid-glass rounded-2xl w-full dark:text-white"
+    >
+      <!-- header -->
+      <div class="flex justify-between p-6 text-black dark:text-blue-100 text-sm sm:text-lg">
+        <h1 class="font-morabba-bold">سفارشات اخیر</h1>
+        <div id="show-all-orders" data-link="orders" class="flex-center gap-x-1 font-morabba-light cursor-pointer">
+          <span>مشاهده همه</span>
+          <svg class="size-3.5 sm:size-5">
+            <use href="#chevron-left-rounded"></use>
+          </svg>
+        </div>
+      </div>
+
+      <!-- table -->
+      <div class="overflow-x-auto text-right liquid-glass border-0 custom-scroll">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-[#6B7280] dark:text-white *:p-4 border-b border-[#E5E7EB] dark:border-gray-600"
+            >
+              <th class="">نام مشتری</th>
+              <th class="">شماره تماس مشتری</th>
+              <th class="">توضیحات</th>
+              <th class="">روش پرداخت</th>
+              <th class="">مبلغ پرداخت شده</th>
+              <th class="">زمان ثبت</th>
+              <th class="">زمان پرداخت</th>
+              <th class="">وضعیت تراکنش</th>
+            </tr>
+          </thead>
+          <tbody id="orders-recent">
+            <!-- data loaded from js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- products -->
+    <div
+      class="flex flex-col col-span-full pb-3.75 liquid-glass rounded-2xl w-full dark:text-white z-10"
+    >
+      <!-- header -->
+      <div class="flex justify-between p-6 text-black dark:text-blue-100 text-sm sm:text-lg">
+        <h1 class="font-morabba-bold">محصولات اخیر</h1>
+        <div id="show-all-products" data-link="products" class="flex-center gap-x-1 font-morabba-light cursor-pointer">
+          <span>مشاهده همه</span>
+          <svg class="size-3.5 sm:size-5">
+            <use href="#chevron-left-rounded"></use>
+          </svg>
+        </div>
+      </div>
+
+      <!-- table -->
+      <div class="overflow-x-auto text-right liquid-glass border-0 custom-scroll">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-[#6B7280] dark:text-white *:p-4 border-b border-[#E5E7EB] dark:border-gray-600"
+            >
+              <th class="">تصویر محصول</th>
+              <th class="">نام محصول</th>
+              <th class="">قیمت</th>
+              <th class="">دسته بندی</th>
+              <th class="">موجودی</th>
+              <th class="">تاریخ ثبت</th>
+              <th class="">تخفیف</th>
+              <th class="">وضعیت محصول</th>
+            </tr>
+          </thead>
+          <tbody id="products-recent">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</body>
