@@ -1,4 +1,4 @@
-🧩 CMS Admin Dashboard — Modular SPA
+#🧩 CMS Admin Dashboard — Modular SPA
 
 A production-style Content Management System (CMS) built with Vanilla JavaScript (ES Modules), TailwindCSS v4, and JSON-Server, powered by Vite 7.
 
@@ -23,7 +23,7 @@ iziToast — Toast notifications
 
 moment-jalaali — Jalali date handling
 
-✨ Features
+#✨ Features
 
 📊 Dashboard overview
 
@@ -55,7 +55,7 @@ Download invoice (PDF)
 
 🏗 Architecture
 
-The project follows a modular and scalable structure:
+#The project follows a modular and scalable structure:
 
 src/
 ├── api/        → API layer
@@ -65,6 +65,7 @@ src/
 ├── utils/      → Utilities (pagination, debounce, toast, date, etc.)
 ├── router.js   → Custom SPA router
 ├── app.js
+├── input.css
 └── main.js
 Engineering Highlights
 
@@ -78,22 +79,22 @@ Reusable utilities
 
 Designed for easy migration to React or TypeScript
 
-⚙️ Setup & Development
-# Install dependencies
+#⚙️ Setup & Development
+Install dependencies
 npm install
-# Run Vite dev server
+Run Vite dev server
 npm run dev
-# Run mock API server(json-server)
+Run mock API server(json-server)
 npm run server
 
-📦 Available Scripts
+#📦 Available Scripts
 Script	Description
 npm run dev	Start development server
 npm run build	Build for production
 npm run preview	Preview production build
 npm run server	Start JSON-Server
 
-🎯 What This Project Demonstrates
+#🎯 What This Project Demonstrates
 
 Strong JavaScript fundamentals
 
