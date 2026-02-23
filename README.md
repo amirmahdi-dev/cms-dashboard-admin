@@ -5,23 +5,21 @@ A production-style Content Management System (CMS) built with Vanilla JavaScript
 This project demonstrates how to architect a scalable Single Page Application (SPA) without frameworks, focusing on clean structure, modularity, and maintainability.
 
 ## 🚀 Tech Stack
-Core
+- Vite 7 — Development server & bundler
 
-Vite 7 — Development server & bundler
+- Vanilla JavaScript (ES Modules) — Modular architecture
 
-Vanilla JavaScript (ES Modules) — Modular architecture
+- TailwindCSS v4 — Utility-first styling
 
-TailwindCSS v4 — Utility-first styling
+- JSON-Server — Mock REST API
 
-JSON-Server — Mock REST API
+#### Additional Libraries
 
-Additional Libraries
+- html2pdf.js — Invoice PDF generation
 
-html2pdf.js — Invoice PDF generation
+- iziToast — Toast notifications
 
-iziToast — Toast notifications
-
-moment-jalaali — Jalali date handling
+- moment-jalaali — Jalali date handling
 
 ## ✨ Features
 
@@ -57,6 +55,7 @@ Download invoice (PDF)
 
 ## The project follows a modular and scalable structure:
 
+```
 src/
 ├── api/        → API layer
 ├── layouts/    → Layout components
@@ -67,6 +66,8 @@ src/
 ├── app.js
 ├── input.css
 └── main.js
+```
+
 Engineering Highlights
 
 SPA architecture without frameworks
@@ -80,19 +81,25 @@ Reusable utilities
 Designed for easy migration to React or TypeScript
 
 ## ⚙️ Setup & Development
-Install dependencies
+### Install dependencies
+```
 npm install
-Run Vite dev server
+```
+### Run Vite dev server
+```
 npm run dev
-Run mock API server(json-server)
+```
+### Run mock API server (JSON-Server)
+```
 npm run server
-
+```
 ## 📦 Available Scripts
-Script	Description
-npm run dev	Start development server
-npm run build	Build for production
-npm run preview	Preview production build
-npm run server	Start JSON-Server
+|Script |	Description|
+|-------|------------|
+|npm run dev| **Start development server**|
+|npm run build|**Build for production**|
+|npm run preview|**Preview production build**|
+|npm run server|**Start JSON-Server**|
 
 ## 🎯 What This Project Demonstrates
 
