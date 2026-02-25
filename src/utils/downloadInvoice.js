@@ -3,7 +3,7 @@ import * as date from "../utils/date.js";
 
 export const downloadInvoice = async (order) => {
 
-  // ساخت کانتینر مخفی خارج از UI
+  // create ui
   const wrapper = document.createElement("div");
 
   wrapper.style.position = "fixed";
