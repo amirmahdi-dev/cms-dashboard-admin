@@ -84,7 +84,7 @@ class ToastManager {
 
         document.body.appendChild(toast);
 
-        // انیمیشن ورود
+        // animation
         requestAnimationFrame(() => {
             toast.classList.remove("opacity-0", "translate-y-4");
         });
